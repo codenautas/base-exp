@@ -12,7 +12,10 @@
     "server",
     "unlogged"
   ],
-  "repository": "codenautas/exportador",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codenautas/exportador.git"
+  },
   "dependencies": {
     "operativos": "~0.1.30"
   },
@@ -31,5 +34,10 @@
     "stability": "extending",
     "type": "app",
     "ecmaVersion": 6
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/codenautas/exportador/issues"
+  },
+  "homepage": "https://github.com/codenautas/exportador#readme",
+  "devDependencies": {}
 }

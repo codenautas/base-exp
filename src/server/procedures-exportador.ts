@@ -1,22 +1,14 @@
 "use strict";
 
-import {ProcedureContext} from "operativos";
-import { AppExportadorType } from "./app-exportador";
-
-type TablaDatosGenerarParameters={
-    operativo: string
-    tabla_datos: string
-}
-
 var procedures = [
     {
-        action:'tabla_datos/generar',
+        action:'base/exportar',
         parameters:[
-            {name:'operativo'  , typeName:'text', references:'operativos' },
-            {name:'tabla_datos', typeName:'text', references:'tabla_datos'}
+            {name:'operativo'  , typeName:'text', references:'operativos'},
+            {name:'base'       , typeName:'text', references:'expo_bases'}
         ],
-        coreFunction:async function(context:ProcedureContext, parameters:TablaDatosGenerarParameters){
-            var be = context.be as AppExportadorType;
+        coreFunction:async function(){
+            //var be = context.be as AppExportadorType;
         }
     },   
 ];
