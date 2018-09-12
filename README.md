@@ -1,2 +1,2 @@
-# base-exp
-Aplicación para exportación de bases de usuario.
+# exportador
+Aplicación de administración y diseño de exportación para bases de usuario

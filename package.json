@@ -1,0 +1,35 @@
+{
+  "name": "exportador",
+  "description": "Aplicación de administración y diseño de exportación para bases de usuario",
+  "version": "0.0.1",
+  "author": "Codenautas <codenautas@googlegroups.com>",
+  "license": "MIT",
+  "main": "server/app-exportador.js",
+  "types": "server/app-exportador.d.ts",
+  "files": [
+    "client",
+    "install",
+    "server",
+    "unlogged"
+  ],
+  "repository": "codenautas/exportador",
+  "dependencies": {
+    "operativos": "~0.1.30"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "(tsc -p tsconfig-client.json || echo \"continue w/error\") && (tsc -p tsconfig-server.json  || echo \"continue w/error\")",
+    "start": "node server/server-exportador.js"
+  },
+  "qa-control": {
+    "package-version": "0.3.0",
+    "coverage": 90,
+    "run-in": "server",
+    "stability": "extending",
+    "type": "app",
+    "ecmaVersion": 6
+  }
+}
