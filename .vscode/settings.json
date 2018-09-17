@@ -1,0 +1,3 @@
+{
+    "window.title": "EXP ${dirty}${separator}${rootName}${separator}${activeEditorShort}"
+}

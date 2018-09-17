@@ -25,7 +25,8 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "(tsc -p tsconfig-client.json || echo \"continue w/error\") && (tsc -p tsconfig-server.json  || echo \"continue w/error\")",
-    "start": "node server/server-exportador.js"
+    "start": "node server/server-exportador.js",
+    "dump": "npm run build && npm start -- --dump-db"
   },
   "qa-control": {
     "package-version": "0.3.0",
