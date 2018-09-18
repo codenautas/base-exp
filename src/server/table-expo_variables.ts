@@ -8,9 +8,10 @@ function expo_variables(context:TableContext):TableDefinition{
         elementName: 'variable',
         editable: admin,
         fields: [
-            // { name: "operativo"          , typeName: 'text'    }, ya la tiene expo_tabla
-            { name: "variable"           , typeName: 'text'    },
+            { name: "operativo"          , typeName: 'text'    }, 
+            { name: "expo_base"        , typeName:'text'       },
             { name: "expo_tabla"         , typeName: 'text'    },
+            { name: "variable"           , typeName: 'text'    },
             { name: "abr"                , typeName: 'text'    },
             // { name: "nombre"             , typeName: 'text'    },
             // { name: "tipovar"            , typeName: 'text'    },
@@ -30,13 +31,13 @@ function expo_variables(context:TableContext):TableDefinition{
             { name: "orden"              , typeName: 'integer'    },
 
         ],
-        primaryKey: ['variable','expo_tabla'],
+        primaryKey: ['operativo','expo_base','expo_tabla','variable'],
         foreignKeys:[
-            {references:'expo_tablas', fields:['expo_tabla']},
-            {references:'unidad_analisis', fields:['unidad_analisis']},
+            {references:'expo_tablas', fields:['operativo','expo_base','expo_tabla']},
+            {references:'unidad_analisis', fields:['operativo','unidad_analisis']},
         ],
         detailTables: [
-            { table: 'expo_variables_opciones', fields: ['variable'], abr: 'o', label: 'opciones' }
+            { table: 'expo_variables_opciones', fields: ['variable', 'expo_tabla', 'expo_base', 'operativo'], abr: 'o', label: 'opciones' }
         ],
     }
 }

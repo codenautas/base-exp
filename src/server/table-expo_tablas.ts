@@ -8,19 +8,19 @@ function expo_tablas(context:TableContext):TableDefinition{
         elementName: 'tablas para exportación',
         editable: admin,
         fields: [
+            {name:"operativo"        , typeName:'text'                },
             {name:"expo_base"        , typeName:'text'                },
             {name:"expo_tabla"       , typeName:'text'                },
-            {name:"nombre_destino"   , typeName:'text', title:'nombre de archivo resultante de la exportación' },
             {name:"tabla_datos"      , typeName:'text'                },
-            // {name:"operativo"     , typeName:'text'                }, // no va porque la base tiene el operativo
+            {name:"nombre_destino"   , typeName:'text', title:'nombre de archivo resultante de la exportación' },
         ],
-        primaryKey: ['expo_tabla','expo_base'],
+        primaryKey: ['operativo','expo_base','expo_tabla'],
         foreignKeys:[
-            {references:'expo_bases', fields:['expo_base']},
-            {references:'tabla_datos', fields:['tabla_datos']},
+            {references:'expo_bases', fields:['operativo', 'expo_base']},
+            {references:'tabla_datos', fields:['operativo','tabla_datos']},
         ],
         detailTables: [
-            { table: 'expo_variables', fields: ['expo_tabla'], abr: 'T', label: 'variables' }
+            { table: 'expo_variables', fields: ['expo_tabla', 'expo_base', 'operativo'], abr: 'T', label: 'tablas para exportación' }
         ]
     }
 }

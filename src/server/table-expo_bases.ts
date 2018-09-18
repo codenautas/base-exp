@@ -1,7 +1,7 @@
 "use strict";
 import {TableContext,TableDefinition} from "operativos"
 
-function expo_bases(context:TableContext):TableDefinition{
+export function expo_bases(context:TableContext):TableDefinition{
     var admin = context.user.rol === 'admin';
     return {
         name: 'expo_bases',
@@ -17,9 +17,8 @@ function expo_bases(context:TableContext):TableDefinition{
             {references:'operativos', fields:['operativo']},
         ],
         detailTables: [
-            { table: 'expo_tablas', fields: ['expo_base'], abr: 'T', label: 'tablas exportación' }
+            { table: 'expo_tablas', fields: ['expo_base', 'operativo'], abr: 'T', label: 'bases para exportación' }
         ]
     }
 }
 
-export {expo_bases};
