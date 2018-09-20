@@ -1,12 +1,11 @@
 "use strict";
 
-import { procedures } from "./procedures-exportador";
 import * as operativos from "operativos";
-
-import { expo_bases} from "./table-expo_bases";
-import { expo_tablas} from "./table-expo_tablas";
-import { expo_variables} from "./table-expo_variables";
-import { expo_variables_opciones} from "./table-expo_variables_opciones";
+import { procedures } from "./procedures-exportador";
+import { expo_bases } from "./table-expo_bases";
+import { expo_tablas } from "./table-expo_tablas";
+import { expo_variables } from "./table-expo_variables";
+import { expo_variables_opciones } from "./table-expo_variables_opciones";
 
 export * from "operativos";
 
@@ -15,7 +14,8 @@ export function emergeAppExportador<T extends Constructor<operativos.AppOperativ
     
     return class AppExportador extends Base{
         myProcedures: operativos.ProcedureDef[] = procedures;
-        // myClientFileName: string = 'exportador';
+        myClientFileName: string = 'exportador';
+        
         constructor(...args:any[]){ 
             super(args);
             this.initialize();
