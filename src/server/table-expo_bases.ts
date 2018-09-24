@@ -10,7 +10,7 @@ export function expo_bases(context:TableContext):TableDefinition{
         fields: [
             {name:"operativo"        , typeName:'text'                },
             {name:"expo_base"        , typeName:'text'                },
-            {name:"descripcion"      , typeName:'text'                },
+            {name:"nombre"      , typeName:'text'                },
         ],
         primaryKey: ['operativo','expo_base'],
         foreignKeys:[
