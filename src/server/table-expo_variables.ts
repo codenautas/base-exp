@@ -12,6 +12,7 @@ function expo_variables(context:TableContext):TableDefinition{
             { name: "expo_base"        , typeName:'text'       },
             { name: "expo_tabla"         , typeName: 'text'    },
             { name: "variable"           , typeName: 'text'    },
+            { name: "alias"                , typeName: 'text'    },
             { name: "abr"                , typeName: 'text'    },
             // { name: "nombre"             , typeName: 'text'    },
             // { name: "tipovar"            , typeName: 'text'    },
@@ -33,6 +34,7 @@ function expo_variables(context:TableContext):TableDefinition{
         ],
         primaryKey: ['operativo','expo_base','expo_tabla','variable'],
         foreignKeys:[
+            {references:'variables', fields:['operativo','unidad_analisis','variable']},
             {references:'expo_tablas', fields:['operativo','expo_base','expo_tabla']},
             {references:'unidad_analisis', fields:['operativo','unidad_analisis']},
         ],

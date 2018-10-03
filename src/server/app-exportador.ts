@@ -90,11 +90,15 @@ export function emergeAppExportador<T extends Constructor<operativos.AppOperativ
 
         getMenu():operativos.MenuDefinition{
             //TODO: es igual que en datos-ext llevarlo a operativos
-            let myMenuPart:operativos.MenuInfo[]=[
-                {menuType:'table', name:'expo_bases'},
-                {menuType:'table', name:'expo_tablas'},
-                {menuType:'table', name:'expo_variables'},
-                {menuType:'table', name:'expo_variables_opciones'},
+            let myMenuPart: operativos.MenuInfo[] = [
+                {
+                    menuType: 'menu', name: 'Bases usuarios', menuContent: [
+                        { menuType: 'table', name: 'expo_bases' },
+                        { menuType: 'table', name: 'expo_tablas' },
+                        { menuType: 'table', name: 'expo_variables' },
+                        { menuType: 'table', name: 'expo_variables_opciones' }
+                    ]
+                }
             ];
             let menu = {menu: super.getMenu().menu.concat(myMenuPart)}
             return menu;
