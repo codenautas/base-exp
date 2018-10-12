@@ -16,7 +16,7 @@ function expo_variables(context:TableContext):TableDefinition{
             { name: "abr"                , typeName: 'text'    },
             // { name: "nombre"             , typeName: 'text'    },
             // { name: "tipovar"            , typeName: 'text'    },
-            { name: "unidad_analisis"    , typeName: 'text'   , nullable:false                    },
+            { name: "tabla_datos"    , typeName: 'text'   , nullable:false                    },
             // { name: "clase"              , typeName: 'text'   , nullable:false                    },
             // { name: "es_pk"              , typeName: 'boolean', defaultValue: false},
             // { name: "es_nombre_unico"    , typeName: 'boolean' },
@@ -34,9 +34,9 @@ function expo_variables(context:TableContext):TableDefinition{
         ],
         primaryKey: ['operativo','expo_base','expo_tabla','variable'],
         foreignKeys:[
-            {references:'variables', fields:['operativo','unidad_analisis','variable']},
+            // {references:'variables', fields:['operativo', 'tabla_datos', 'variable']},
             {references:'expo_tablas', fields:['operativo','expo_base','expo_tabla']},
-            {references:'unidad_analisis', fields:['operativo','unidad_analisis']},
+            // {references:'tabla_datos', fields:['operativo','tabla_datos']},
         ],
         detailTables: [
             { table: 'expo_variables_opciones', fields: ['variable', 'expo_tabla', 'expo_base', 'operativo'], abr: 'o', label: 'opciones' }
