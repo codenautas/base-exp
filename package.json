@@ -1,7 +1,7 @@
 {
   "name": "exportador",
   "description": "Aplicación de administración y diseño de exportación para bases de usuario",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Codenautas <codenautas@googlegroups.com>",
   "license": "MIT",
   "main": "server/app-exportador.js",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/codenautas/exportador.git"
   },
   "dependencies": {
-    "operativos": "~0.1.33"
+    "operativos": "~0.1.34"
   },
   "engines": {
     "node": ">= 8.0.0"
